@@ -18,22 +18,27 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ photo, setPhoto }) => {
   };
 
   return (
-    <div className="mb-4">
-      <label className="mb-2 block text-white">Upload Profile Picture</label>
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileChange}
-        className="mb-4 text-white"
-      />
+    <div className="mb-6">
+      <label className="block text-sm font-medium text-white mb-2">
+        Upload Profile Picture
+      </label>
 
-      {photo && (
-        <img
-          src={photo}
-          alt="Preview"
-          className="w-[100px] h-[100px] object-cover mb-4 rounded-full"
+      <div className="flex items-center gap-4">
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          className="w-full text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 bg-[#1a0142] border border-purple-600 rounded-md py-2 px-3"
         />
-      )}
+
+        {photo && (
+          <img
+            src={photo}
+            alt="Preview"
+            className="w-[40px] h-[40px] rounded-full object-cover border border-white shadow-sm"
+          />
+        )}
+      </div>
     </div>
   );
 };
