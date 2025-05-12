@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Ticket = () => {
   const data = JSON.parse(localStorage.getItem("ticketData") || "{}");
 
